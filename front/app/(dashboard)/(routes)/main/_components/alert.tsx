@@ -9,10 +9,10 @@ import {
 } from "lucide-react";
 const Alert = () => {
     return ( 
-        <div className="p-2 border-2 border-gray-200 rounded-lg">
-        <h1 className="text-2xl font-semibold text-gray-800">Alert</h1>
-        <div className="flex flex-col gap-2">
-          <div>
+        <div className="p-2 ">
+        <h1 className="text-2xl font-semibold text-center text-gray-800">Alert</h1>
+        <div className="flex flex-col gap-1">
+         
           <Button type="button" variant="outline" size="lg">
             <AlertTriangle />
             <p>24</p>
@@ -21,8 +21,8 @@ const Alert = () => {
             <LampDesk />
             <p>4</p>
           </Button>
-          </div>
-          <div>
+        
+       
           <Button type="button" variant="outline" size="lg" className="">
             <Gauge />
             <p>4</p>
@@ -31,11 +31,12 @@ const Alert = () => {
             <ZapOff />
             <p>0</p>
           </Button>
-          </div>
+         
           <Button type="button" variant="outline" size="lg">
             <Zap />
             <p>2</p>
           </Button>
+          
         </div>
       </div>
      );

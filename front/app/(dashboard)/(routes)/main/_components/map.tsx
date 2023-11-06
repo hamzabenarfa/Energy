@@ -29,7 +29,7 @@ export default function Map({ coords }: MapProps) {
   
 
   return (
-    <MapContainer className="w-full h-96" center={[latitude, longitude]} zoom={10} scrollWheelZoom={true}>
+    <MapContainer className="min-h-screen w-full rounded-xl" center={[latitude, longitude]} zoom={10} scrollWheelZoom={true}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
