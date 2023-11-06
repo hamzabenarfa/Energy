@@ -17,7 +17,7 @@ export const Dashboard = () => {
 
   return (
     <main>
-    <div className="grid grid-cols-3 gap-2">
+    <div className="md:grid grid-cols-3 gap-2">
       <div className="col-span-1 min-h-screen w-30 ">
         <LampStatus />
         <Alert />
