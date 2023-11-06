@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model enregistrement {
+  id           Int      @id @default(autoincrement())
+  idlamp       String   @db.VarChar(30)
+  ID_LIGNE     String   @db.VarChar(20)
+  ID_POSTE     String   @db.VarChar(20)
+  tension      String   @db.VarChar(20)
+  current      String   @db.VarChar(20)
+  reading_time DateTime
+  state_lamp   String   @db.VarChar(20)
+  NIV_LIGHT    String   @db.VarChar(20)
+  cosphi       String   @db.VarChar(20)
+  power        String   @db.VarChar(20)
+}
+
+model lampes {
+  ID_LAMPE        String   @id
+  ID_LIGNE        String
+  DATE            DateTime
+  TIME            DateTime
+  AIR_QUALITY     String
+  TENSION_PHASE_1 String
+  ETAT_LAMPE      String
+  NIV_LIGHT       String
+  COURANT_PHASE_1 String
+  FREQUENCE       String
+  HUMIDITE        String
+  TEMPERATURE     String
+}
+
+model ligne {
+  ID_LIGNE              String   @id
+  NOM_LIGNE             String
+  ID_POSTE              String
+  DATE                  DateTime
+  TIME                  DateTime
+  ETAT_TRNSFO           String
+  ETAT_SECTIONNEUR      String
+  ETAT_FUSIBLE          String
+  ETAT_CONTACT_AUXILIAR String
+  TENSION_PHASE_1       String
+  TENSION_PHASE_2       String
+  TENSION_PHASE_3       String
+  COURANT_PHASE_1       String
+  COURANT_PHASE_2       String
+  COURANT_PHASE_3       String
+  FREQUENCE             String
+  HUMIDITE              String
+  TEMPERATURE           String
+}
+
+model ouvrier {
+  ID_TECHNICIEN  Int      @id @default(autoincrement())
+  NOM_TECHNICIEN String
+  cardID         String
+  postetime      DateTime
+  username       String
+  date_timeIn    DateTime
+  date_timeOut   DateTime
+  UserStat       String
+  presencetime   String
+  workday        String
+}
+
+model transfo {
+  ID_TRANSORMATEUR String  @id
+  SECTEUR          String?
+  REGION           String?
+  GOVERNORAT       String?
+  ETAT_BECHOLTZ2   String?
+  ETAT_SECTIONNEUR String?
+  ETAT_FUSIBLE     String?
+  ETAT_DISJONCTEUR String?
+  ETAT_RELAIS      String?
+  ETAT_KM1         String?
+  ETAT_KM2         String?
+  ETAT_BECHOLTZ1   String?
+  TENSION_PHASE_1  String?
+  TENSION_PHASE_2  String?
+  TENSION_PHASE_3  String?
+  COURANT_PHASE_1  String?
+  COURANT_PHASE_2  String?
+  COURANT_PHASE_3  String?
+  FREQUENCE        String?
+  HUMIDITE         String?
+  TEMPERATURE      String?
+}
+
+model users {
+  id    Int    @id @default(autoincrement())
+  login String @db.VarChar(50)
+  pdw   String @db.VarChar(50)
+  role  String @db.VarChar(50)
+  email String @db.VarChar(50)
+  etat  Int
+}
