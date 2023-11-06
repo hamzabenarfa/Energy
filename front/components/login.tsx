@@ -12,7 +12,7 @@ const Login = () => {  const router = useRouter();
   const onSubmit = () => {
     if (user === "admin" && pwd === "admin") {
         router.push("/main");
-      console.log('hi')
+    
     }
   };
 
@@ -42,7 +42,7 @@ const Login = () => {  const router = useRouter();
        onClick={onSubmit}
         className="mt-4 w-full self-center"
       >
-        Enregistrer
+        Log in
       </Button>
   </div>
   );
