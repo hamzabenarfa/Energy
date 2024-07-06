@@ -23,7 +23,7 @@ export const Dashboard = () => {
           <Alert />
           <ModeOfOperation />
         </div>
-        <div className="col-span-2 min-h-screen mr-2 -z-10">
+        <div className="col-span-2 min-h-screen mr-2 ">
           <DynamicMap coords={coords} />
         </div>
       </div>
