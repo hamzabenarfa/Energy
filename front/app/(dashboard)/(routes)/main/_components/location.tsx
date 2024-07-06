@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -44,14 +45,14 @@ const FormSchema = z.object({
 });
 
 export function Location() {
-  const [delegations, setDelegations] = useState([]);
+  const [delegations, setDelegations] = useState<null | { Name: string; Value: string; }[]>(null);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
   });
-
-  const handleCityChange = (value) => {
+  //ts-ignore
+  const handleCityChange = (value:any) => {
     form.setValue("city", value);
-    const selectedCity = data.find((city) => city.Value === value);
+    const selectedCity  = data.find((city) => city.Value === value);
     setDelegations(selectedCity ? selectedCity.Delegations : []);
     form.setValue("delegation", ""); // Reset delegation value
   };
@@ -114,7 +115,7 @@ export function Location() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    {delegations.map((delegation) => (
+                    {delegations && delegations.map((delegation) => (
                       <SelectItem key={delegation.Value} value={delegation.Value}>
                         {delegation.Name}
                       </SelectItem>
