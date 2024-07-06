@@ -49,6 +49,49 @@ export default function Map({ coords }: MapProps) {
 
         </Popup>
       </Marker>
+      <Marker position={[latitude + 0.1, longitude + 0.1]} icon={customIcon}>
+        <Popup>
+        <div>
+            <h1>Solar02bi</h1>
+            <p>Tension : 21,50</p>
+            <p>Courant : 3&apos;80</p>
+            <p>Production d&apos;energie : 65,&apos;75</p>
+            <p>Irradiation Solaire 800&apos;25</p>
+            <p>Etat des Batteries :Ok</p>
+            <p>Gestion de L&apos;Energie :Optimale</p>
+            <Link href="/statistics">Voir le graphique </Link>
+          </div>
+        </Popup>
+      </Marker>
+      <Marker position={[latitude, longitude + 0.1]} icon={customIcon}>
+        <Popup>
+        <div>
+            <h1>Solar03bi</h1>
+            <p>Tension : 10,01</p>
+            <p>Courant : 3&apos;80</p>
+            <p>Production d&apos;energie : 65,&apos;75</p>
+            <p>Irradiation Solaire 800&apos;25</p>
+            <p>Etat des Batteries :Ok</p>
+            <p>Gestion de L&apos;Energie :Optimale</p>
+            <Link href="/statistics">Voir le graphique </Link>
+          </div>
+        </Popup>
+      </Marker>
+
+      <Marker position={[latitude -0.2, longitude - 0.1]} icon={customIcon}>
+        <Popup>
+        <div>
+            <h1>Solar04bi</h1>
+            <p>Tension : 32,01</p>
+            <p>Courant : 3&apos;80</p>
+            <p>Production d&apos;energie : 65,&apos;75</p>
+            <p>Irradiation Solaire 800&apos;25</p>
+            <p>Etat des Batteries :Ok</p>
+            <p>Gestion de L&apos;Energie :Optimale</p>
+            <Link href="/statistics">Voir le graphique </Link>
+          </div>
+        </Popup>
+      </Marker>
       <MapView />
     </MapContainer>
   );
