@@ -9,8 +9,8 @@ export const Logo = () => {
                alt="Logo"
                src="/logo.svg"
             /> */}
-            <p className="font-bold text-xl">
-                Startup
+            <p className="font-bold text-2xl">
+                Energy
             </p>
         </div>
     );

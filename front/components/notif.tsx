@@ -14,8 +14,8 @@ const Notif = () => {
   return (
     <Menubar>
       <MenubarMenu>
-        <MenubarTrigger>
-          <Button variant="ghost">
+        <MenubarTrigger >
+          <Button variant="ghost" size="icon">
             <Bell />
           </Button>
         </MenubarTrigger>

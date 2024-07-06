@@ -40,11 +40,11 @@ const DeviceConfig = () => {
   };
 
   return (
-    <div className="container mt-8 w-1/2">
+    <div className="container mt-8 md:w-1/2">
       <h1 className="text-2xl font-bold mb-4">Page de configuration des appareils</h1>
       <form >
         <div className="form-group">
-          <label className="block font-semibold">Nom de l`&apos;`appareil :</label>
+          <label className="block font-semibold">Nom de l&apos;appareil :</label>
           <input
             type="text"
             value={deviceName}

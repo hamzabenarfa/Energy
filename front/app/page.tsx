@@ -5,18 +5,25 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 import Login from "@/components/login";
+import Image from "next/image";
 
 const Main = () => {
 
 
   return (
     <div className="flex flex-col justify-between min-h-screen">
-      <div className="pt-4  md:px-24 flex md:flex-row justify-between">
+      <div className="pt-4 px-4 md:px-24 flex md:flex-row justify-between">
         <Logo />
         <div className="flex flex-row gap-2">
-          <Button variant="ghost">Home</Button>
-          <Button variant="ghost">About Us</Button>
-          <Button variant="ghost">Contact</Button>
+          
+          <Button variant="ghost" className=" hidden md:block">Home</Button>
+          <Button variant="ghost" className=" hidden md:block">About Us</Button>
+          <Button variant="ghost" className=" hidden md:block">Contact</Button>
+          <Link href="/main">
+            <Button className="">
+              Dashboard
+            </Button>
+          </Link>
         </div>
       </div>
       <div className=" space-y-8 p-2  flex flex-col justify-center items-center md:flex-row xl:gap-x-20">
@@ -41,9 +48,16 @@ const Main = () => {
               ensuring efficient device management and real-time monitoring.
             </p>
           </div>
+         
         </div>
 
-       <Login />
+        <Image
+          src="/hero.svg"
+          alt="hero"
+          width={500}
+          height={500}
+          />
+       {/* <Login /> */}
       </div>
 
       <div className="flex items-center gap-1 justify-center">

@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { useState } from "react";
-import dynamic from 'next/dynamic'; 
+import dynamic from "next/dynamic";
 import Alert from "./alert";
 import LampStatus from "./lamp-status";
-import {ModeOfOperation} from "./mode-of-operation"; 
+import { ModeOfOperation } from "./mode-of-operation";
 
 const DynamicMap = dynamic(() => import("./map"), {
   ssr: false,
@@ -17,16 +17,16 @@ export const Dashboard = () => {
 
   return (
     <main>
-    <div className="md:grid grid-cols-3 gap-2">
-      <div className="col-span-1 min-h-screen w-30 ">
-        <LampStatus />
-        <Alert />
-        <ModeOfOperation />
+      <div className="md:grid grid-cols-3 gap-2">
+        <div className="col-span-1 min-h-screen w-30 ">
+          <LampStatus />
+          <Alert />
+          <ModeOfOperation />
+        </div>
+        <div className="col-span-2 min-h-screen mr-2 -z-10">
+          <DynamicMap coords={coords} />
+        </div>
       </div>
-      <div className="col-span-2 min-h-screen mr-2">
-      <DynamicMap coords={coords} />
-      </div>
-    </div>
-  </main>
+    </main>
   );
 };
